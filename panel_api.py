@@ -48,3 +48,8 @@ def delete_order_from_queue(order_id):
         .format(order_id)
     r = crystal_api.get(url)
 
+
+def send_new_suborder_to_OoA_web(some_json):
+    url = "http://192.168.1.210:5000/create_new_suborder"
+    r = requests.post(url, json=some_json)
+    print(r)

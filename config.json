@@ -11,10 +11,7 @@
   "roll_30_channels": [
     56, 57, 58, 59, 61, 62, 63, 64, 76, 77, 78, 79, 106, 107, 108, 109, 86, 87, 88, 89, 101, 102, 103, 104, 81, 82, 83, 84, 91, 92, 93, 94, 96, 97, 98, 99
   ],
-
-  "items_to_load": 40,
   "timeout": 12,
-  "blacklisted": "o02887",
-  "panel_login": ,
-  "panel_password": 
+  "panel_login": "a.slowik@crystal-albums.pl",
+  "panel_password": "123456"
 }
