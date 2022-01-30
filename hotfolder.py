@@ -54,16 +54,20 @@ def create_json(directory):
 
 
 def on_created(event):
-    folder_name = os.path.split(event.src_path)[1]
-    print("Folder {} appears".format(folder_name))
-    time.sleep(2)
-    order_data = create_json(folder_name)
-    panel_api.send_new_suborder_to_OoA_web(order_data)
+    path = os.path.split(event.src_path)
+    filename = path[1]
+    if filename == "AUTPRINT.MRK":
+        parent_folder = os.path.split(path[0])[0]
+        parent_folder = os.path.split(parent_folder)[1]
+        print("AUTPRINT.MRK appears in folder {}".format(parent_folder))
+        time.sleep(2)
+        order_data = create_json(parent_folder)
+        panel_api.send_new_suborder_to_OoA_web(order_data)
 
 
 observer = Observer()
 event_handler = FileSystemEventHandler()
 
 event_handler.on_created = on_created
-observer.schedule(event_handler, config["download_path"], recursive=False)
+observer.schedule(event_handler, config["download_path"], recursive=True)
 
