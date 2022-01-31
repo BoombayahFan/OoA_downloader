@@ -18,6 +18,7 @@ def on_start_process_downloaded_orders():
     for directory in directory_list:
         print("Processing {}".format(directory))
         hotfolder.create_json(directory)
+    print("Processed all present directories")
         
 
 if __name__ == '__main__':
