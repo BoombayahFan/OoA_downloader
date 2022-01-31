@@ -39,7 +39,7 @@ def parse(folder_name):
             return order_id
         except:
             print("Failed to read MRK order_id at {}".format(path))
-            return "???"
+            return "0"
 
     def read_session_count():
         try:
@@ -48,7 +48,7 @@ def parse(folder_name):
             return session_count[0]
         except:
             print("Failed to read MRK session_count at {}".format(path))
-            return "???"
+            return "0"
 
     def read_prints_count():
         try:
@@ -68,7 +68,7 @@ def parse(folder_name):
             return print_format
         except:
             print("Failed to read MRK prints_format at {}".format(path))
-            return "???"
+            return "0"
 
     def read_suborder_name():
         try:
