@@ -95,9 +95,10 @@ def parse(folder_name):
 
     return {"mrk_exists": mrk_present,
             "channel": read_channel(),
-            "order_id": read_order_id(),
+            "panel_order_id": read_order_id(),
             "prints_count": read_prints_count(),
             "prints_format": read_prints_format(),
             "roll": convert_channel_to_roll(read_channel()),
             "session_count": read_session_count(),
-            "suborder_name": read_suborder_name()}
+            "suborder_name": read_suborder_name(),
+            "is_archived": False}

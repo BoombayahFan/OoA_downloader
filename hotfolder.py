@@ -37,18 +37,22 @@ def create_json(directory):
                 order_data.update({"file_size_ok": True})
 
             # Fourth append to order data - data from panel
-            sessions_id = panel_parse.download_sessions_id(mrk_data["order_id"])
+            sessions_id = panel_parse.download_sessions_id(mrk_data["panel_order_id"])
             suborder_id = sessions_id.get(mrk_data["session_count"]) # wróciłem do tego po miesiącu i musiałem się 10 minut zastanawiać o chuj chodzi
-            order_data.update({"suborder_id": suborder_id})
+            order_data.update({"panel_suborder_id": suborder_id})
 
-        # Dobra, najpierw musi wysłać do OoA_web, dostać 200 i dopiero wtedy może to zapisać - do dodanani
 
-            # Save order data
-            with open(json_path, 'w', encoding='utf-8') as f:
-                json.dump(order_data, f, ensure_ascii=False, indent=4)
+            if panel_api.send_new_suborder_to_OoA_web(order_data): # tutaj request
+                # Save order data
+                with open(json_path, 'w', encoding='utf-8') as f:
+                    json.dump(order_data, f, ensure_ascii=False, indent=4)
 
-            print("Successfully processed {}".format(directory))
-            return order_data
+                print("Successfully processed {}".format(directory))
+                return order_data
+            else:
+                print("OoA_downloader communication failed at {}".format(directory))
+
+
     except Exception as e:
         print("Failed to process {}\nError - {}".format(directory, e))
 
@@ -61,8 +65,9 @@ def on_created(event):
         parent_folder = os.path.split(parent_folder)[1]
         print("AUTPRINT.MRK appears in folder {}".format(parent_folder))
         time.sleep(2)
-        order_data = create_json(parent_folder)
-        panel_api.send_new_suborder_to_OoA_web(order_data)
+        create_json(parent_folder)
+
+
 
 
 observer = Observer()

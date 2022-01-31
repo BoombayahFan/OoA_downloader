@@ -50,6 +50,9 @@ def delete_order_from_queue(order_id):
 
 
 def send_new_suborder_to_OoA_web(some_json):
-    url = "http://192.168.1.210:5000/create_new_suborder"
+    ip = config["ip"]
+    port = config["port"]
+    url = "http://{}:{}/create_new_suborder".format(ip, port)
     r = requests.post(url, json=some_json)
-    print(r)
+    return r
+

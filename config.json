@@ -1,6 +1,5 @@
 {
-  "download_path": "A:\\odbitki\\",
-  "save_path": "C:\\Python\\qss_OoA\\",
+  "download_path": "\\\\192.168.1.30\\downloads\\",
 
   "roll_15_channels": [
     11, 12, 13, 14, 6, 7, 8, 9, 51, 52, 53, 54, 31, 32, 33, 34, 36, 37, 38, 39, 46, 47, 48, 49, 41, 42, 43, 44
@@ -13,5 +12,7 @@
   ],
   "timeout": 12,
   "panel_login": "a.slowik@crystal-albums.pl",
-  "panel_password": "123456"
+  "panel_password": "123456",
+  "ip": "192.168.1.226",
+  "port": "5000"
 }
