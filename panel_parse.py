@@ -17,6 +17,7 @@ def download_sessions_id(order_id):
             mrk_number = (re.findall("\[.*]", session_number))[0]
             print_id = photo_prints.get("order_id")
             sessions_id[mrk_number] = print_id
-        except:
+        except Exception as e:
+            print(e)
             print("Brak odbitek w zamówieniu?")
     return sessions_id
