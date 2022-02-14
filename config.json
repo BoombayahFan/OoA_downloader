@@ -1,6 +1,6 @@
 {
-  "download_path": "\\\\192.168.1.30\\downloads\\",
-
+  "download_path": "A:\\odbitki\\",
+  "destination_path": "A:\\odbitki_OoA\\",
   "roll_15_channels": [
     11, 12, 13, 14, 6, 7, 8, 9, 51, 52, 53, 54, 31, 32, 33, 34, 36, 37, 38, 39, 46, 47, 48, 49, 41, 42, 43, 44
   ],
@@ -10,7 +10,7 @@
   "roll_30_channels": [
     56, 57, 58, 59, 61, 62, 63, 64, 76, 77, 78, 79, 106, 107, 108, 109, 86, 87, 88, 89, 101, 102, 103, 104, 81, 82, 83, 84, 91, 92, 93, 94, 96, 97, 98, 99
   ],
-  "timeout": 12,
+  "timeout": 6,
   "panel_login": "a.slowik@crystal-albums.pl",
   "panel_password": "123456",
   "ip": "192.168.1.226",

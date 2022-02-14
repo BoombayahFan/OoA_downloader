@@ -6,7 +6,7 @@ from configuration import config
 
 def parse(folder_name):
 
-    path = "{}\\{}\\MISC\\AUTPRINT.MRK".format(config["download_path"], folder_name)
+    path = "{}\\{}\\MISC\\AUTPRINT.MRK".format(config["destination_path"], folder_name)
 
     def convert_channel_to_roll(channel_str):
         try:
