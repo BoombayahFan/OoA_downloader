@@ -24,12 +24,12 @@ if __name__ == '__main__':
             folder_name = directory_list[0]
             hotfolder.wait_for_full_download(folder_name)
             time.sleep(1)
-            hotfolder.move_folder(folder_name)
-            hotfolder.process_suborder_folder(folder_name)
+            new_folder_name = hotfolder.move_folder(folder_name)
+            hotfolder.process_suborder_folder(new_folder_name)
         elif len(directory_list) > 1:
             folder_name = directory_list[0]
-            hotfolder.move_folder(folder_name)
-            hotfolder.process_suborder_folder(folder_name)
+            new_folder_name = hotfolder.move_folder(folder_name)
+            hotfolder.process_suborder_folder(new_folder_name)
             time.sleep(1)
 
         else:

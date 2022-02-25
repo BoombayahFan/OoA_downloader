@@ -1,6 +1,6 @@
 {
-  "download_path": "A:\\odbitki\\",
-  "destination_path": "A:\\odbitki_OoA\\",
+  "download_path": "\\\\192.168.1.30\\downloads\\",
+  "destination_path": "\\\\192.168.1.30\\qss_orders\\",
   "roll_15_channels": [
     11, 12, 13, 14, 6, 7, 8, 9, 51, 52, 53, 54, 31, 32, 33, 34, 36, 37, 38, 39, 46, 47, 48, 49, 41, 42, 43, 44
   ],

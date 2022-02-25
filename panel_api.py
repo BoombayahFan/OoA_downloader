@@ -35,9 +35,6 @@ def get_order_html(order_id):
 
 
 def change_session_status(order_id, session_id):
-    # payload = {"status_id": 41, "context": "prints"}
-    # payload = json.dumps(payload)
-
     url = "https://panel.crystal-albums.pl/laborders/status/changed/order_id/{}/id/{}?status_id=41&context=prints" \
         .format(order_id, session_id)
     r = crystal_api.post(url)
@@ -47,7 +44,6 @@ def delete_order_from_queue(order_id):
     url = "https://panel.crystal-albums.pl/laborders/machine/deteleprintsorder/from/detailedalbums/print_order_id/{}"\
         .format(order_id)
     r = crystal_api.get(url)
-
 
 def send_new_suborder_to_OoA_web(some_json):
     ip = config["ip"]
