@@ -1,6 +1,6 @@
 {
-  "download_path": "\\\\192.168.1.30\\downloads\\",
-  "destination_path": "\\\\192.168.1.30\\qss_orders\\",
+  "download_path": "C:\\Python\\downloads\\",
+  "destination_path": "C:\\Python\\qss_OoA\\",
   "roll_15_channels": [
     11, 12, 13, 14, 6, 7, 8, 9, 51, 52, 53, 54, 31, 32, 33, 34, 36, 37, 38, 39, 46, 47, 48, 49, 41, 42, 43, 44
   ],
@@ -14,5 +14,10 @@
   "panel_login": "a.slowik@crystal-albums.pl",
   "panel_password": "123456",
   "ip": "192.168.1.226",
-  "port": "5000"
+  "port": "5000",
+  "fast_package_products": [
+    "Tablo", "Eko", "StoryPrints", "Teczki",
+    "Koperta", "Board", "Crystal Board", "Canvas", "Worki",
+    "Pendrive", "Wzornik", "Worki"
+  ]
 }

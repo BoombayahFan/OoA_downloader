@@ -80,14 +80,16 @@ def process_suborder_folder(folder_name):
     sessions_id = panel_parse.download_sessions_id(mrk_data["panel_order_id"])
     suborder_id = sessions_id.get(mrk_data["session_count"])
     order_data.update({"panel_suborder_id": suborder_id})
+    fast_package_value = panel_api.check_fast_package(order_data["panel_order_id"])
+    order_data.update({"fast_package": fast_package_value})
     if suborder_id is None:
         order_data.update({"panel_suborder_id": "0"})
 
-    if panel_api.send_new_suborder_to_OoA_web(order_data):
+    if panel_api.send_new_suborder_to_ooa_web(order_data):
         print("Successfully processed order {} in folder {}".format(mrk_data["panel_order_id"], new_folder_name))
     else:
         for _ in range(10):
-            if panel_api.send_new_suborder_to_OoA_web(order_data):
+            if panel_api.send_new_suborder_to_ooa_web(order_data):
                 break
         else:
             print("Failed to send order {}".format(new_folder_name))
