@@ -25,7 +25,7 @@ def move_folder(folder_name):
 def wait_for_full_download(folder_name):
     time.sleep(1)
     try:
-        images_path = "{}{}\\{}\\".format(config['download_path'], folder_name, "IMAGES")
+        images_path = "{}{}/{}/".format(config['download_path'], folder_name, "IMAGES")
         current_images_count = len(os.listdir(images_path))
         i = 0
         TIMEOUT = config['timeout']*10
