@@ -78,7 +78,7 @@ def parse(folder_name):
             print("Failed to read MRK suborder_name at {}".format(path))
             return "???"
 
-    path = os.path.join(config["destination_path"], folder_name, "MISC", "AUTPRINT.MRK")
+    path = os.path.join(config["download_path"], folder_name, "MISC", "AUTPRINT.MRK")
 
     mrk_parser = configparser.ConfigParser(strict=False)
 
