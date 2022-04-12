@@ -6,8 +6,6 @@ from configuration import config
 
 def parse(folder_name):
 
-    path = "{}\\{}\\MISC\\AUTPRINT.MRK".format(config["destination_path"], folder_name)
-
     def convert_channel_to_roll(channel_str):
         try:
             channel = int(channel_str)
@@ -80,6 +78,8 @@ def parse(folder_name):
             print("Failed to read MRK suborder_name at {}".format(path))
             return "???"
 
+    path = os.path.join(config["destination_path"], folder_name, "MISC", "AUTPRINT.MRK")
+
     mrk_parser = configparser.ConfigParser(strict=False)
 
     try:
@@ -87,6 +87,7 @@ def parse(folder_name):
             mrk_parser.read(path, encoding="utf-8")
             mrk_present = True
         else:
+            print("File at {} does not exist".format(path))
             raise Exception
     except Exception as e:
         mrk_present = False
